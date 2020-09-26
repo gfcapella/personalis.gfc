@@ -1,0 +1,7 @@
+<section>
+  {{ range where .Site.Pages "Type" "post" }}
+    {{ if eq .IsPage true }}
+      {{ partial "postsummary.html" . }}
+    {{ end }}
+  {{ end }}
+</section>

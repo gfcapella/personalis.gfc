@@ -1,0 +1,32 @@
+<head>
+    <link rel="icon" href="/img/favicon.svg" sizes="any" type="image/svg+xml">
+
+    <link rel="stylesheet" href="/css/mvp.css">
+    <link rel="stylesheet" href="/css/personalis.css">
+{{- with resources.Get "css/override.css" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end }}
+
+{{- partial "cookieconsent.html" . -}}
+
+    <meta charset="utf-8">
+
+    {{/* Generate page description. */}}
+    {{ $desc := "" }}
+    {{ if .Params.summary }}
+      {{ $desc = .Params.summary }}
+    {{ else if .Params.abstract }}
+      {{ $desc = .Params.abstract }}
+    {{ else if .IsPage }}
+      {{ $desc = .Summary }}
+    {{ else if site.Params.description }}
+      {{ $desc = site.Params.description }}
+    {{ else }}
+      {{ $desc = site.Title }}
+    {{ end }}
+    <meta name="description" content="{{ $desc }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+</head>

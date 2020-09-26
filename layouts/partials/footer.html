@@ -1,0 +1,5 @@
+<footer>
+{{- if isset .Site.Params "authorname" -}}
+Copyright &copy; {{ now.Year }}, {{ .Site.Params.AuthorName }} &middot;
+{{- end -}}
+</footer>

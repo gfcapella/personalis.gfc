@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="css/cookieconsent-3.0.3.min.css">
+<script src="js/cookieconsent-3.0.3.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#f4f4f4",
+          "text": "#34495e"
+        },
+        "button": {
+          "background": "#e9e9e9",
+          "text": "#34495e"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": {{ i18n "cookie_message" | default "This website uses cookies to ensure you get the best experience on our website." }},
+        "dismiss": {{ i18n "cookie_dismiss" | default "Got it!" }},
+        "link": {{ i18n "cookie_learn" | default "Learn more" }},
+        "href": {{ with site.GetPage "privacy.md" }}{{ printf "%s" .RelPermalink }}{{ else }}"https://cookies.insites.com"{{ end }}
+      }
+    })});
+</script>

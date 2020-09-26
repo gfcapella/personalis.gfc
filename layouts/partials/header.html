@@ -1,0 +1,37 @@
+{{- $projects := false -}}
+{{- $about := false -}}
+
+{{- range first 1 (where .Site.Pages "Title" "project") -}}
+{{-   $projects = true -}}
+{{- end -}}
+
+{{- range first 1 (where .Site.Pages "Title" "about") -}}
+{{-   $about = true -}}
+{{- end -}}
+
+{{- $img := resources.Get "img/logo.svg" -}}
+{{- with resources.Get "img/logo.png" -}}
+{{-   $img = . -}}
+{{- else -}}
+{{-   with resources.Get "img/logo.jpg" -}}
+{{-     $img = . -}}
+{{-   end -}}
+{{- end -}}
+
+<header>
+  <nav>
+      <a href="/"><img alt="Logo" class="logo" src="{{ $img.RelPermalink }}"></a>
+{{- if (or $projects $about) -}}
+    <ul>
+      <li><a href="/">Blog</a></li>
+{{-   if $projects -}}
+      <li><a href="/projects">Projects</a></li>
+{{-   end -}}
+{{-   if $about -}}
+      <li><a href="/about">About</a></li>
+{{-   end -}}
+    </ul>
+{{- end -}}
+  </nav>
+  <h1>{{ .Title }}</h1>
+</header>

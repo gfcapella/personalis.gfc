@@ -1,0 +1,8 @@
+{{- $post := . }}
+<aside>
+  {{ $img := $post.Resources.GetMatch "featured.[pj][np]g" }}
+  <img alt="Post Image" src="{{ $img.RelPermalink }}" />
+  <h3><a href="{{ $post.RelPermalink  }}">{{ $post.Title }}</a></h3>
+  <p>{{ $post.Params.Subtitle }}</p>
+  <p><small>{{ $post.Summary }}</small></p>
+</aside>

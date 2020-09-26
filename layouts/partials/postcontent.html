@@ -1,0 +1,34 @@
+{{- $post := . }}
+<section>
+  <article class="post-content-all">
+    <figure>
+{{- $img := $post.Resources.GetMatch "featured.[pj][np]g" -}}
+{{- if $img -}}
+    <img class="post-content-img" alt="Post Image" src="{{ $img.RelPermalink }}" />
+{{- end -}}
+    <figcaption>
+    Last updated on {{ $.Lastmod.Format "Jan 2, 2006" }}
+    </figcaption>
+    <figure>
+    <h2 class="post-content-title">{{ $post.Title }}</h2>
+    <p>{{ $post.Params.Subtitle }}</p>
+{{- if isset $post.Params "bibliography" -}}
+    <div id="gr_add_to_books">
+      <div class="gr_custom_each_container_">
+          <a target="_blank" style="border:none" rel="nofollow noopener noreferrer"
+              href="https://www.goodreads.com/book/isbn/{{ $post.Params.bibliography.isbn }}">
+              <img alt="{{ $post.Params.bibliography.title }}" src="https://www.goodreads.com/images/atmb_add_book-70x25.png" /></a>
+      </div>
+    </div>
+    <!-- the identifier in the following script tag can be a GR book id or an isbn -->
+    <script src="https://www.goodreads.com/book/add_to_books_widget_frame/{{ $post.Params.bibliography.isbn }}?atmb_widget%5Bbutton%5D=atmb_widget_1.png"></script>
+{{- end -}}
+{{- if isset $post.Params "disclaimer" -}}
+    <details open>
+      <summary>Disclaimer</summary>
+{{- $post.Params.disclaimer | markdownify -}}
+    </details>
+{{- end -}}
+    <div class="post-content-text">{{ $post.Content }}</div>
+  </article>
+</section>

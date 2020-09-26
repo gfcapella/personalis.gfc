@@ -1,0 +1,38 @@
+:root {
+    --font-family: "Roboto Slab, serif";
+    --color-text: #34495e;
+}
+
+body {
+    font-weight: 100;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+}
+
+details {
+    background: var(--color-secondary-accent);
+    border-left: 4px solid var(--color-secondary);
+    padding: 0.01rem 0.8rem;
+}
+
+nav {
+    margin-bottom: 0rem;
+}
+
+.post-content-all {
+    max-width: 85%;
+}
+
+.post-content-title {
+    text-align: center;
+}
+
+.post-content-text {
+    text-align: justify;
+}
+
+.post-content-img {
+    width: 100% !important;
+    height: 100px;
+    object-fit: cover;
+}
