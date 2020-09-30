@@ -1,4 +1,25 @@
 {{- $post := . }}
+<span>
+{{- $img := $post.Resources.GetMatch "featured.[pj][np]g" -}}
+{{- $img = $img.Resize "300x" -}}
+  <img alt="Post Image" src="{{ $img.RelPermalink }}" />
+  <h3>
+    <a href="{{ $post.RelPermalink  }}">{{ $post.Title }}</a>
+  </h3>
+  <p>{{ $post.Summary }}...</p>
+</span>
+<!--
+<article class="post-summary">
+{{- $img := $post.Resources.GetMatch "featured.[pj][np]g" -}}
+{{- $img = $img.Resize "300x" -}}
+  <img class="post-summary-img" alt="Post Image" src="{{ $img.RelPermalink }}" />
+  <h2 class="post-summary-title">
+    <a href="{{ $post.RelPermalink  }}">{{ $post.Title }}</a>
+  </h2>
+  <p class="post-summary-text">{{ $post.Summary }}...</p>
+</article>
+-->
+<!--
 <aside>
   {{ $img := $post.Resources.GetMatch "featured.[pj][np]g" }}
   <img alt="Post Image" src="{{ $img.RelPermalink }}" />
@@ -6,3 +27,4 @@
   <p>{{ $post.Params.Subtitle }}</p>
   <p><small>{{ $post.Summary }}</small></p>
 </aside>
+-->

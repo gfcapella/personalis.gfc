@@ -4,11 +4,11 @@
     <figure>
 {{- $img := $post.Resources.GetMatch "featured.[pj][np]g" -}}
 {{- if $img -}}
-    <img class="post-content-img" alt="Post Image" src="{{ $img.RelPermalink }}" />
+      <img class="post-content-img" alt="Post Image" src="{{ $img.RelPermalink }}" />
 {{- end -}}
-    <figcaption>
-    Last updated on {{ $.Lastmod.Format "Jan 2, 2006" }}
-    </figcaption>
+      <figcaption>
+      Last updated on {{ $.Lastmod.Format "Jan 2, 2006" }}
+      </figcaption>
     <figure>
     <h2 class="post-content-title">{{ $post.Title }}</h2>
     <p>{{ $post.Params.Subtitle }}</p>
