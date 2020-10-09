@@ -33,6 +33,12 @@ nav {
     margin-bottom: 0rem;
 }
 
+footer,
+header,
+main {
+    padding: 0rem 0rem;
+}
+
 .post-content-all {
     max-width: 85%;
 }
@@ -45,8 +51,7 @@ nav {
     text-align: justify;
 }
 
-.post-content-img {
-    width: 100% !important;
-    height: 100px;
-    object-fit: cover;
+#gr_add_to_books {
+    padding: 0rem 0rem;
+    line-height: 0px;
 }
