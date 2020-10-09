@@ -1,5 +1,18 @@
 <head>
-    <link rel="icon" href="/img/favicon.svg" sizes="any" type="image/svg+xml">
+{{- $img := resources.Get "img/favicon.svg" -}}
+{{- $imgtype := "image/svg+xml" -}}
+{{- with resources.Get "img/favicon.png" -}}
+{{-   $img = . -}}
+{{-   $img = $img.Resize "48x" -}}
+{{-   $imgtype = "image/png" -}}
+{{- else -}}
+{{-   with resources.Get "img/favicon.jpg" -}}
+{{-     $img = . -}}
+{{-     $img = $img.Resize "48x" -}}
+{{-     $imgtype = "image/jpg" -}}
+{{-   end -}}
+{{- end -}}
+<link rel="icon" href="{{ $img.RelPermalink }}" sizes="any" type="{{ $imgtype }}">
 
     <link rel="stylesheet" href="/css/mvp.css">
     <link rel="stylesheet" href="/css/personalis.css">
