@@ -1,0 +1,20 @@
+{{- $post := . }}
+{{- $img := resources.Get "img/me.jpg" -}}
+{{- with resources.Get "img/me.png" -}}
+{{-   $img = . -}}
+{{- end -}}
+<section>
+  <span>
+{{- if $img -}}
+    <img alt="Me" class="about-me-img" src="{{ $img.RelPermalink }}" />
+{{- end -}}
+    <h4>
+    {{ range $post.Params.Social }}
+    <a href="{{ .link }}">
+        <div class="{{ .icon }}"></div>
+    </a>
+    {{ end }}
+    {{ $post.Params.Role }}</h4>
+    <div class="post-content-text">{{ $post.Content }}</div>
+  </span>
+</section>

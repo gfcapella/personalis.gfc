@@ -1,4 +1,3 @@
-<head>
 {{- $img := resources.Get "img/favicon.svg" -}}
 {{- $imgtype := "image/svg+xml" -}}
 {{- with resources.Get "img/favicon.png" -}}
@@ -11,14 +10,14 @@
 {{-     $img = $img.Resize "48x" -}}
 {{-     $imgtype = "image/jpg" -}}
 {{-   end -}}
-{{- end -}}
-<link rel="icon" href="{{ $img.RelPermalink }}" sizes="any" type="{{ $imgtype }}">
+{{- end }}
+    <link rel="icon" href="{{ $img.RelPermalink }}" sizes="any" type="{{ $imgtype }}">
 
     <link rel="stylesheet" href="/css/mvp.css">
     <link rel="stylesheet" href="/css/personalis.css">
 {{- with resources.Get "css/override.css" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
-{{- end }}
+{{ end }}
 
 {{- partial "cookieconsent.html" . -}}
 
@@ -42,4 +41,3 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
-</head>

@@ -1,0 +1,16 @@
+{{- $post := . }}
+<section>
+    <h1>What keeps me moving</h1>
+</section>
+<section>
+    {{ range $post.Params.Interests }}
+<aside>
+    {{ if .icon }}
+    <i class="{{ .icon }}"></i>
+    {{ else if .logo }}
+    <img alt="{{ .name }}" src="{{ .logo }}" />
+    {{ end }}
+    {{ .name }}
+</aside>
+    {{ end }}
+</section>

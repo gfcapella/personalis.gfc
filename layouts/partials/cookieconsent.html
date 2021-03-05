@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="css/cookieconsent-3.0.3.min.css">
-<script src="js/cookieconsent-3.0.3.min.js"></script>
-<script>
+    <link rel="stylesheet" href="/css/cookieconsent-3.0.3.min.css">
+    <script src="/js/cookieconsent-3.0.3.min.js"></script>
+    <script>
   window.addEventListener("load", function(){
     window.cookieconsent.initialise({
       "palette": {
@@ -21,4 +21,4 @@
         "href": {{ with site.GetPage "privacy.md" }}{{ printf "%s" .RelPermalink }}{{ else }}"https://cookies.insites.com"{{ end }}
       }
     })});
-</script>
+    </script>

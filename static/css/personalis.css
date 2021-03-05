@@ -51,7 +51,7 @@ main {
     text-align: justify;
 }
 
-#gr_add_to_books {
-    padding: 0rem 0rem;
-    line-height: 0px;
+.about-me-img {
+    max-width: 45%;
 }
+
