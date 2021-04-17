@@ -1,5 +1,14 @@
 <footer>
+{{- $privacy := false -}}
+
+{{- range first 1 (where .Site.Pages "Type" "privacy") -}}
+{{-   $privacy = true -}}
+{{- end -}}
+
+{{- if $privacy -}}
+  <div><a href="/privacy/">Privacy</a></div>
+{{- end -}}
 {{- if isset .Site.Params "authorname" -}}
-Copyright &copy; {{ now.Year }}, {{ .Site.Params.AuthorName }} &middot;
+<div> Copyright &copy; {{ now.Year }}, {{ .Site.Params.AuthorName }} &middot; </div>
 {{- end -}}
 </footer>
