@@ -1,5 +1,5 @@
 :root {
-    --font-family: "Roboto Slab, serif";
+    --font-family: "Source Sans Pro","Helvetica Neue",Helvetica,sans-serif;
     --color-text: #34495e;
 }
 
@@ -18,7 +18,7 @@ section span img {
 
 
 body {
-    font-weight: 100;
+    font-weight: 400;
     -moz-osx-font-smoothing: grayscale;
     font-size: 20px;
 }
@@ -36,7 +36,7 @@ nav {
 footer,
 header,
 main {
-    padding: 0rem 0rem;
+    padding: 0rem 10rem;
 }
 
 .post-content-all {
